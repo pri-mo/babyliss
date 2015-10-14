@@ -1,0 +1,119 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+/**
+ * Clear inner floats
+ */
+%cf {
+  &:before, &:after{
+		content: '';
+		display: table;
+	}
+	&:after{
+		clear: both;
+	}
+}
+.clearfix {
+  @extend %cf;
+}
+
+/**
+ * Hide text while making it readable for screen readers
+ * 1. Needed in WebKit-based browsers because of an implementation bug;
+ *    See: https://code.google.com/p/chromium/issues/detail?id=457146
+ */
+.hide-text {
+  overflow: hidden;
+  padding: 0; /* 1 */
+  text-indent: -9999px;
+  white-space: nowrap;
+}
+
+/**
+ * Hide element while making it readable for screen readers
+ * Shamelessly borrowed from HTML5Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+// Spacer
+.spacer {
+	height: 1px;
+	margin: 1rem auto;
+
+	&.sp--short { width: 1.64rem; }
+	&.sp--long { width: 70%; }
+	&.sp--white { background-color: $white; }
+	&.sp--dark { background-color: $text-color; }
+}
+
+// Cover image
+.gc__cover-img {
+	position: absolute;
+	top: 50%; left: 50%;
+	transform: translate(-50%, -50%);
+  filter: grayscale(0%);
+	transition: 1s all 0s;
+	max-width: none;
+	width: 101%;
+  opacity: .88;
+
+  & + .gc__content { color: $white; }
+  .preload & { opacity: 0;}
+
+	&.gc__cover-img--wide { width: auto; height: 110%; }
+	&.gc__cover-img--tall, .gc--aspect-2to1 &.gc__cover-img--wide { width: 110%; }
+  &.gc__cover-img--sqr { width: 110%; }
+
+	@include respond-to('medium') {
+		&.gc__cover-img--wide { height: 110%; width: auto; }
+		&.gc__cover-img--tall { width: 110%; height: auto; }
+    &.gc__cover-img--sqr { width: 110%; height: auto; }
+	}
+}
+
+// In case you have long text to break nicely
+.hyphens {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+
+// FontAwesome Icons
+.icon {
+  font-style: normal;
+  font-weight: normal;
+  font-size: $text-font-size;
+  line-height: 1em;
+  font-family: FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &:after { text-indent: 0; }
+
+  &.icon__search:after { content:'\f002'; }
+  &.icon__facebook:after { content: '\f082'; }
+  &.icon__instagram:after { content: '\f16d'; }
+  &.icon__youtube:after { content: '\f16a'; }
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('fonts/fontawesome-webfont.eot?v=4.4.0');
+  src: url('fonts/fontawesome-webfont.eot?#iefix&v=4.4.0') format('embedded-opentype'), url('fonts/fontawesome-webfont.woff2?v=4.4.0') format('woff2'), url('fonts/fontawesome-webfont.woff?v=4.4.0') format('woff'), url('fonts/fontawesome-webfont.ttf?v=4.4.0') format('truetype'), url('fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

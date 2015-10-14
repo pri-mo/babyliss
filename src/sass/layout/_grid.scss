@@ -1,0 +1,228 @@
+// -----------------------------------------------------------------------------
+// This file contains the grid definition.
+// -----------------------------------------------------------------------------
+
+
+// Define some tools
+// -----------------------------------------------------------------------------
+@function prcnt($fraction) {
+  @return 100% * $fraction;
+}
+
+@mixin gridWidth($fraction) {
+  width: prcnt($fraction);
+  position: relative;
+}
+
+@mixin aspect($fraction) {
+  overflow: hidden;
+  &:before {
+    @extend %fake-block;
+    padding-bottom: prcnt($fraction);
+
+    @include respond-to('medium') {
+      padding-bottom: 100%;
+    }
+  }
+}
+
+%gridRow {
+  margin: 0 auto;
+  width: 100%;
+  @extend %cf;
+}
+
+%gridCell {
+  float: left;
+}
+
+
+// Execute
+// -----------------------------------------------------------------------------
+
+// Basic layout
+.layout {
+  @extend %gridRow;
+  @extend %cf;
+  @include respond-to('medium') { padding-top: 3rem; /* Make room for top menu. */ }
+}
+
+.layout__news {
+  @include gridWidth(1/5);
+  @extend %gridCell;
+  padding: 0;
+  margin-top: 40vw;
+  background-color: $white;
+
+  .page__products & { margin-top: 80vh; }
+
+  @include respond-to('medium') {
+    float: none;
+    margin-top: 0!important;
+    width: 100%;
+  }
+}
+
+.layout__page-content {
+  @include gridWidth(4/5);
+  @extend %gridCell;
+  padding: 0;
+  float: right;
+
+  @include respond-to('medium') {
+    float: none;
+    width: 100%;
+  }
+}
+
+.layout__page-footer {
+  @include gridWidth(1);
+  @extend %gridCell;
+  background-color: $brand-color;
+  padding: 0 0 1rem 0;
+  clear: both;
+  float: left;
+  position: relative;
+
+  .gc--brand {
+    @include gridWidth(1/5);
+    @extend %gridCell;
+    padding: 1rem;
+    position: static;
+
+    @include respond-to('medium') {
+      @include gridWidth(1/6);
+      position: static;
+    }
+  }
+  .gc--nav {
+    @include gridWidth(4/5);
+    @extend %gridCell;
+    padding: 1.64rem;
+    position: relative;
+    min-height: 100%;
+
+    @include respond-to('medium') {
+      @include gridWidth(5/6);
+    }
+  }
+
+  @include respond-to('medium') {
+    float: none;
+    width: 100%;
+  }
+}
+
+// Grid Row
+.gr {
+  @extend %gridRow;
+
+  &.gr--margin { padding: 1rem; }
+  &.gr--header { padding: 3rem 1.64rem 1.64rem;
+    @include respond-to('medium') { padding: 2rem 1rem 1rem; }
+  }
+  &.gr--inverse { @include smartColor($brand-color); }
+  &.gr--white { @include smartColor($white); }
+  &.gr--column .gc { float: none; clear: both; margin-left: auto; margin-right: auto; }
+}
+
+// -----------------------------------------------------------------------------
+// Grid Cells
+// -----------------------------------------------------------------------------
+@mixin gc($color, $w: null) {
+  background-color: $color;
+  $cont-color: setTextColor($color) !default;
+  @if $w == 1 { $cont-color: $white; }
+  color: $cont-color;
+  &:after, .gc__content:after {
+    border-color: $cont-color;
+    border-style: solid;
+  }
+}
+
+.gc {
+  @extend %gridCell;
+
+  &.gc--full { @include gridWidth(1);
+    @include respond-to('medium') { @include gridWidth(1); }}
+  &.gc--half { @include gridWidth(1/2);
+    @include respond-to('medium') { @include gridWidth(1/2); }}
+  &.gc--long { @include gridWidth(2/3);
+    @include respond-to('medium') { @include gridWidth(1/2); }}
+  &.gc--short { @include gridWidth(1/3);
+    @include respond-to('medium') { @include gridWidth(1/2); }}
+  &.gc--tiny { @include gridWidth(1/4);
+    @include respond-to('medium') { @include gridWidth(1/2); }}
+  &.gc--snippet { @include gridWidth(1/5); }
+
+  &.gc--aspect-1to1 { @include aspect(1); }
+  &.gc--aspect-2to1 { @include aspect(1/2);
+    @include when-inside('.gc') { &:before { padding-bottom: 50%; }}
+  }
+  &.gc--aspect-3to1 { @include aspect(1/3); }
+
+  &.gc__news { @include gridWidth(1); @include aspect(1);
+    @include respond-to('medium') { @include gridWidth(1/3); }
+    @include respond-to('small') { @include gridWidth(1/2); }
+    @include when-inside('.page__listing--news') {
+      @include gridWidth(1/4);
+      @include respond-to('medium') { @include gridWidth(1/3); }
+      @include respond-to('small') { @include gridWidth(1/2); }
+    }
+  }
+
+
+  // Fix mobile text cell
+  &.gc--plain-on-mobile {
+    @include respond-to('small') {
+      width: 100%;
+      padding-top: 1.36rem;
+      .gc__content { position: relative; }
+      &:before { display: none; }
+
+      & + .gc--long { width: 100%; }
+      & + .gc.gc--aspect-2to1:before { padding-bottom: 50%;}
+    }
+  }
+}
+
+
+// Cell colors
+// -----------------------------------------------------------------------------
+
+// Basic colors
+.gc--brand { @include gc($brand-color);}
+.gc--white { @include gc($white);}
+.gc--cloud { @include gc($cloud);}
+.gc--grey { @include gc($grey);}
+.gc--black { @include gc($black);}
+
+// Pallete colors
+@include cellColor($sun, sun);
+@include cellColor($burn, burn);
+@include cellColor($sky, sky);
+@include cellColor($grape, grape);
+@include cellColor($smoke, smoke);
+
+// -----------------------------------------------------------------------------
+
+// Cell content
+.gc__content {
+  padding: 1rem;
+  transition: $transition;
+
+  @include respond-to('medium') {
+    padding: .64rem;
+  }
+
+  &.gc__content--centered { text-align: center; }
+  &.gc__content--right { text-align: right; }
+  &.gc__content--header { padding: 3rem 1.64rem 1.64rem;
+    @include respond-to('medium') { padding: 2rem 1rem 1rem; }
+  }
+
+  [class^="gc--aspect-"] &,
+  [class*=" gc--aspect-"] & {
+    @extend %spread-out;
+  }
+}

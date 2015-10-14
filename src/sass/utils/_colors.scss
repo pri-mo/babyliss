@@ -1,0 +1,211 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Color pallette generator.
+// -----------------------------------------------------------------------------
+
+// To make a green palette for example, just run:
+// $green-palette: palette(lightgreen);
+
+// And to get a specific (ex. light) shade from the palette, run:
+// light($green-palette);
+
+
+
+// -----------------------------------------------------------------------------
+// Credits
+// Author: Hugo Giraudel
+// Title: Using Sass to Build Color Palettes
+// Url: http://www.sitepoint.com/using-sass-build-color-palettes/
+// -----------------------------------------------------------------------------
+
+/**
+ * Function defining the difference between 2 colors
+ *
+ * @param {Color} $a - first color
+ * @param {Color} $b - second color
+ *
+ * @return {Map}  The color operations to do in order to find $b from $a where keys are the color functions to apply and values are the values to pass to these functions
+ */
+@function color-diff($a, $b) {
+  $sat: saturation($a) - saturation($b);
+  $lig:  lightness($a) -  lightness($b);
+  $fn-sat: if($sat > 0, 'desaturate', 'saturate');
+  $fn-lig: if($lig > 0, 'darken', 'lighten');
+
+  @return (
+    adjust-hue: -(hue($a) - hue($b)),
+    #{$fn-sat}: abs($sat),
+    #{$fn-lig}: abs($lig)
+  );
+}
+
+/**
+ * Compute the diff for each color from the initial palette
+ *
+ * @param {Map} $palette - palette
+ *
+ * @requires {function} color-diff
+ *
+ * @return {List} list of diffs
+ */
+@function palette-diff($palette) {
+  $base: map-get($palette, base);
+  $colors: map-get($palette, colors);
+
+  $diffs: ();
+
+  @each $color in $colors {
+    $diffs: append($diffs, color-diff($base, $color));
+  }
+
+  @return $diffs;
+}
+
+/**
+ * Initial palette used to define the diff between the base color and each color from the palette. There can be as many
+ *
+ * @type Map
+ */
+$base-palette: (
+  base: #f00000,
+  colors: #f58181 #f54646 #ed0000 #bd0808 #7a0b0b
+) !default;
+
+/**
+ * Palette diffs
+ * Same length as colors key from map-palette
+ *
+ * @type List
+ */
+$palette-diffs: palette-diff($base-palette);
+
+/**
+ * Apply differences returned from `color-diff` function to a color in order to retrieve the second color
+ *
+ * @param {Color} $color - color to transform
+ * @param {Map} $diff - diff map
+ *
+ * @return {Color} transformed color
+ */
+@function apply-diff($color, $diff) {
+  // We call the $key (function),
+  // passing the $color and the $value as parameters
+  // e.g. `call(adjust-hue, #BADA55, 42)`
+  @each $key, $value in $diff {
+    $color: call($key, $color, $value);
+  }
+
+  @return $color;
+}
+
+/**
+ * Create a palette from a base color
+ *
+ * @param {Color} $base-color - base color for the palette
+ *
+ * @requires {function} palette-diff
+ * @requires {function} apply-diff
+ * @requires {variable} $base-palette
+ *
+ * @return {List} list of colors
+ */
+@function create-palette($base-color) {
+  $colors: ();
+
+  @each $diff in $palette-diffs {
+    $colors: append($colors, apply-diff($base-color, $diff));
+  }
+
+  @return $colors;
+}
+
+/**
+ * Create a list of colors from the base color
+ * then turn in into a map with explicit keys
+ *
+ * @param {Color} $base-color - base color for the palette
+ *
+ * @requires {function} create-palette
+ *
+ * @return {Map}
+ */
+@function palette($base-color) {
+  $colors: create-palette($base-color);
+  $keys: 'lighter' 'light' 'base' 'dark' 'darker';
+  $palette: ();
+
+  @for $i from 1 through min(length($colors), length($keys)) {
+    $palette: map-merge($palette, (nth($keys, $i): nth($colors, $i)));
+  }
+
+  @return $palette;
+}
+
+/**
+ * Create and apply a palette
+ *
+ * @param {Color} $base-color - base color
+ *
+ * @requires {function} create-palette
+ */
+@mixin cellColor($base-color, $name) {
+  $palette: create-palette($base-color);
+  $shades: 'lighter' 'light' 'base' 'dark' 'darker';
+  $length: length($palette);
+
+  @for $i from 1 through $length {
+    $color: nth($palette, $i);
+    $shade: nth($shades, $i);
+    $make: 'gc--#{$name}--#{$shade}';
+
+    .#{$make} { @include gc($color);}
+  }
+}
+
+/**
+ * Easy palette color grab
+ *
+ * @param {Color} $palette - palette to browse from
+ *
+ * @requires {function} create-palette
+ */
+@function lightest($palette) {
+  @if not map-has-key($palette, 'lightest') {
+    @warn "`#{inspect($palette)}` doesn't seem to have a key named `lightest`.";
+  }
+  @return map-get($palette, 'lightest');
+}
+
+@function lighter($palette) {
+  @if not map-has-key($palette, 'lighter') {
+    @warn "`#{inspect($palette)}` doesn't seem to have a key named `lighter`.";
+  }
+  @return map-get($palette, 'lighter');
+}
+
+@function light($palette) {
+  @if not map-has-key($palette, 'light') {
+    @warn "`#{inspect($palette)}` doesn't seem to have a key named `light`.";
+  }
+  @return map-get($palette, 'light');
+}
+
+@function base($palette) {
+  @if not map-has-key($palette, 'base') {
+    @warn "`#{inspect($palette)}` doesn't seem to have a key named `base`.";
+  }
+  @return map-get($palette, 'base');
+}
+
+@function dark($palette) {
+  @if not map-has-key($palette, 'dark') {
+    @warn "`#{inspect($palette)}` doesn't seem to have a key named `dark`.";
+  }
+  @return map-get($palette, 'dark');
+}
+
+@function darker($palette) {
+  @if not map-has-key($palette, 'darker') {
+    @warn "`#{inspect($palette)}` doesn't seem to have a key named `darker`.";
+  }
+  @return map-get($palette, 'darker');
+}

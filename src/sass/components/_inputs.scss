@@ -1,0 +1,121 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the data input components.
+// -----------------------------------------------------------------------------
+
+@mixin textInput($color) {
+	background-color: transparent;
+	border: 0;
+	border-radius: 0!important;
+	border-bottom: 2px solid rgba($color,.64);
+	color: $color;
+  margin: 0;
+  padding: .5rem;
+	transition: $transition;
+	width: 100%;
+	z-index: 102;
+
+	@include respond-to('medium') {
+		padding-top: 0;
+		font-size: 1.36rem;
+
+		& ~ .icon { font-size: 1.36rem; }
+	}
+
+	&::-webkit-input-placeholder { color: rgba($color,.64);transition: .25s color .0s; }
+	&::-moz-placeholder { color: rgba($color,.64);transition: .25s color .0s; } /* firefox 19+ */
+	&:-ms-input-placeholder { color: rgba($color,.64);transition: .25s color .0s; } /* ie */
+	&:-moz-placeholder { color: rgba($color,.64);transition: .25s color .0s; }
+	&.placeholder { color: rgba($color,.64);transition: .25s color .0s; }
+
+	@include on-event {
+		outline: none;
+		border-bottom: 2px solid $color;
+
+		&::-webkit-input-placeholder { color: $color; }
+		&::-moz-placeholder { color: $color; } /* firefox 19+ */
+		&:-ms-input-placeholder { color: $color; } /* ie */
+		&:-moz-placeholder { color: $color; }
+		&.placeholder { color: $color; }
+	}
+}
+
+.input {
+	@include textInput($text-color);
+
+	&.input--inverse { @include textInput($white); }
+
+	&.input--inline { width: auto; }
+	&.input--spaced { margin: 1rem auto 0; }
+
+  & + label {
+    font-weight: 400;
+    opacity: .64;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: .75rem;
+    display: block;
+    transition: $transition;
+  }
+  &:focus + label {opacity: 1;}
+}
+
+.checkbox {
+  & + label {
+    font-weight: 400;
+    line-height: 1.2em;
+    font-size: .75rem;
+    transition: $transition;
+  }
+}
+
+// Select Box
+@mixin selectBox($color) {
+	appearance: none;
+	font-weight: 800;
+	margin: 0;
+	padding: .64rem;
+	text-align: center;
+	text-decoration: none;
+	transition: $transition;
+	background-image: none;
+  background-color: transparent;
+	border-radius: 0 !important;
+	border: 2px solid $color;
+	box-shadow: none;
+	color: $color;
+	font-size: 1rem;
+	line-height: 1em;
+	outline: none;
+
+	@include on-event {
+		border-color: $color;
+		color: setTextColor($color);
+		background-color: $color;
+		box-shadow: $shadow;
+	}
+
+}
+.select { @include selectBox($text-color);}
+.select--black { @include selectBox($black); }
+
+// Search Form
+.search-form { position: relative; }
+.nav .search-form { margin-top: 1rem; }
+
+// Twitter Typeahead custom styles
+.twitter-typeahead { display: block!important; }
+.tt-menu {
+	background-color: $white;
+	padding: 3.36rem .64rem .64rem;
+	box-shadow: $shadow;
+	margin: -3rem -.36rem 0;
+	width: calc( 100% + ( 2 * .36rem ) );
+}
+.tt-suggestion {
+	cursor: pointer;
+	padding: .36rem;
+	transition: $transition;
+
+	&:hover { background-color: rgba($text-color, .1); }
+	.tt-highlight { color: $black; font-weight: 800; transition: $transition; }
+}

@@ -1,0 +1,281 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the product page.
+// -----------------------------------------------------------------------------
+.page__product {
+  background-color: $white;
+
+	&:not(.nav--on-scroll).desktop .nav__top {min-height: 100vh;}
+
+	// Product specific type colors
+	.layout__page-content {
+		h4 { color: darker($smoke-palette); }
+		h2, h3 { color: darker($smoke-palette); }
+	}
+
+	// product breadcrums
+	.gc__product-breadcrums {
+		h2, h3, h4 { color: light($smoke-palette); }
+	}
+
+	// Product specific hero box
+	.gc__hero {
+		@include gridWidth(1);
+		@include aspect(1/2);
+		overflow: hidden;
+		background-color: lighter($smoke-palette);
+
+		@include respond-to('medium') { &:before { padding-bottom: (100% / 2); } }
+		@include respond-to('small') { padding: 2rem 0; }
+
+		&:after {
+			border: 5px solid $black;
+			display: block; content: '';
+			position: absolute;
+			top: 1rem;
+			bottom: 1rem;
+			left: 1rem;
+			right: 1rem;
+		}
+
+		.gc__content {
+			position: absolute;
+			bottom: 1.36rem;
+			right: 36%;
+			left: 1.36rem;
+			top: auto; transform: none;
+			text-align: left;
+
+			h1, h4 { color: $black; }
+			h1 { margin-top: 1rem; }
+		}
+	}
+
+	// Main product image
+	.gc__product-image {
+		position: absolute;
+		top: 100%;
+		right: 2rem;
+		width: 100%;
+		opacity: 0;
+		transition: .5s top 0s cubic-bezier(0,.67,.5,1), 1s opacity 0s linear, 0.1s width 0s linear;
+
+    &.gc__product-img--sqr {
+			width: 64%;
+			top: 10%;
+			opacity: 1;
+			@include respond-to('small') { width: 64%;}
+		}
+		&.gc__product-img--wide {
+			width: 64%;
+			top: 36%;
+			opacity: 1;
+			@include respond-to('small') { width: 64%;}
+		}
+		&.gc__product-img--tall {
+			width: 25%;
+			opacity: 1;
+			top: 10%;
+		}
+	}
+
+	// Product specific article style
+	.gc.gc__product-body {
+
+		.gc__content {
+			padding: 1rem 2rem;
+
+			@include respond-to('medium') { padding: 1rem 1.36rem; };
+		}
+
+		p { hyphens: auto; }
+
+		.product__lead {
+			font-size: 1.36rem;
+			line-height: 1.3em;
+			max-width: 64%;
+
+			@include respond-to('medium') {max-width: none;}
+
+			&:after {
+				@extend %fake-block;
+				width: 3rem;
+				height: 2px;
+				margin: 1.36rem 0 1rem;
+				background-color: rgba($black, .1 );
+			}
+		}
+
+		figure {
+			margin: 1rem 0;
+			float: right;
+
+			&.product__benefits {
+				width: 50%;
+
+				&:nth-of-type(1n+2) {
+					padding-right: 2rem;
+					@include respond-to('medium') { padding: 0; }
+				}
+			}
+
+			@include respond-to('medium') {
+				&.product__benefits { width: 100%; float: none;}
+			}
+			@include respond-to('small') { }
+
+			ul { list-style: none; margin: 0; padding: .64rem 0; }
+			ul li {
+				// line-height: 1;
+				padding: .5rem; margin: 0;
+				border-bottom: 1px solid rgba($black, .1 );
+
+				&:first-child { border-top: 1px solid rgba($black, .1 ); }
+			}
+		}
+	}
+}
+
+.gc.gc__product-gallery {
+
+	.product-gallery__sizer, .product-gallery__item {
+		width: (100% / 4);
+		@include respond-to('medium') { width: (100% / 3); }
+		@include respond-to('small') { width: (100% / 2); }
+	}
+
+	.product-gallery__item {
+		border: .5rem solid rgba($white, 0);
+		transition: $transition;
+		overflow: hidden;
+
+		img {
+			transition: $transition;
+			transform: perspective(500px) translate3d(0px, 0px, 0px);
+		}
+
+		.preload & img { opacity: 0;}
+
+		@include on-event {
+			z-index: 11;
+			background-color: $white;
+			box-shadow: $shadow;
+
+			img { transform: perspective(500px) translate3d(0px, 0px, 50px); }
+		}
+	}
+
+	.product-gallery__item--video {
+		cursor: pointer;
+		width: (100% / 2);
+
+		@include respond-to('medium') { width: (100% * (2/3)); }
+		@include respond-to('small') { width: 100%; }
+
+		&:before { display: block; content: ''; padding-bottom: 56.25%; }
+		&:after {
+			display: block; content: ''; position: absolute;
+			top: 0px;
+			left: 0px;
+			bottom: 0px;
+			right: 0px;
+			background-image: url('../images/icon-play.svg');
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+			background-size: 25%;
+		}
+
+		img {
+			max-width: none; width: 110%; position: absolute;
+			left: -1rem; right: -1rem; top: 50%;
+			transform-origin: 50% 0%;
+			transform: perspective(500px) translate3d(0, -50%, 0px);
+		}
+
+		@include on-event {
+			img { transform: perspective(500px) translate3d(0, -50%, 50px); }
+		}
+	}
+
+	.product-gallery__item--image {}
+}
+
+// Hide the video container just to show it later on user interaction ;)
+.video-container--featherlight {
+	display: none;
+	width: 75vw;
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+
+	@include respond-to('medium') { width: 88vw; }
+	@include respond-to('small') {width: 90vw;}
+	@include respond-to('huge') { width: 64vw; }
+
+	iframe,
+	object,
+	embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+
+// Shops list
+.gc__product-shops {
+	@extend %cf;
+	padding: 0 .5rem;
+
+	.product-shops__item {
+		$space: 1%;
+		display: block;
+		float: left;
+		position: relative;
+		border: 2px solid rgba($black, .1);
+
+		&:before {
+			display: block;
+			content: '';
+			padding-bottom: 100%;
+		}
+
+		img {
+			position: absolute;
+			display: block;
+			top: 50%; left: 50%;
+			width: 75%;
+			transform: translate(-50%, -50%);
+			transition: $transition;
+		}
+
+		@include on-event {
+			img { width: 88%; }
+		}
+
+		@include respond-to('default') {
+			width: ( 25% - $space );
+			margin-right: $space;
+			margin-bottom: $space;
+			&:nth-last-child(4n-3) { margin-right: 0; }
+			&:nth-last-child(-n+4) { margin-bottom: 0; }
+		}
+
+		@include respond-to('small') {
+			width: ( 50% - ( $space / 2 ) );
+			&:nth-last-child(2n-1) { margin-right: 0; }
+			&:nth-last-child(-n+4) { margin-bottom:$space; }
+			&:nth-last-child(-n+2) { margin-bottom: 0;}
+		}
+
+		@include respond-to('huge') {
+			width: ( 25% - $space );
+			margin-right: $space;
+			margin-bottom: $space;
+			&:nth-last-child(4n-3) { margin-right: 0; }
+			&:nth-last-child(-n+4) { margin-bottom: 0; }
+		}
+	}
+}

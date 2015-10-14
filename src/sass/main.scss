@@ -1,0 +1,43 @@
+@charset 'UTF-8';
+
+// 1. Vendors
+@import
+'vendor/normalize';
+
+// 2. Configuration and helpers
+@import
+'utils/colors',
+'utils/variables',
+'utils/functions',
+'utils/mixins',
+'utils/selectors';
+
+// 3. Base stuff
+@import
+'base/base',
+'base/typography',
+'base/helpers';
+
+// 4. Layout-related sections
+@import
+'layout/grid',
+'layout/navigation';
+
+// 5. Components
+@import
+'components/buttons',
+'components/inputs',
+'components/cells';
+
+// 6. Page-specific styles
+@import
+'pages/home',
+'pages/listing',
+'pages/article',
+'pages/product',
+'pages/ekspert';
+
+
+// 7. Themes
+// @import
+// 'themes/default';

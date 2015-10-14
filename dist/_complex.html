@@ -1,0 +1,885 @@
+<!doctype html>
+<html class="sg">
+
+<head>
+  <meta charset="utf-8">
+  <title>Style Guide</title>
+  <link rel="stylesheet" href="https://cdn.rawgit.com/styledown/styledown/v1.0.2/data/styledown.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/styleguide.css">
+</head>
+
+<body class="sg">
+  <div style="margin: 2rem;">
+    <h2>BaByliss</h2>
+    <h1>Style guide</h1>
+    <div>
+      <!-- Header -->
+      <script src="https://use.typekit.net/aap8wtu.js" class="sg"></script>
+      <script class="sg">
+        try {
+          Typekit.load({
+            async: true
+          });
+        } catch (e) {}
+      </script>
+      <div class="sg-nav sg">
+        <ul class="clearfix sg"></ul>
+      </div>
+      <!-- End of header -->
+
+      <section class="sg-section sg-section-hero-box">
+        <h2 id="hero-box" class="sg">Hero box</h2>
+        <section class="sg-block sg-section-default-hero-box">
+          <div class="sg-text">
+            <h3 id="default-hero-box" class="sg">Default hero box</h3>
+            <p class="sg">By adding a
+              <code class="sg">gc__hero</code>classname to the
+              <code class="sg">gc</code>selector you generate a Hero box. It can be used as an intro section for most pages. It uses
+              <code class="sg">&lt;h1&gt;</code>as it&apos;s main header,
+              <code class="sg">&lt;h4&gt;</code>as a sub-header. The
+              <code class="sg">gc__content</code>is centered regardless of it&apos;s contents. Can have a
+              <code class="sg">btn__group</code>for further navigation.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div class="gr">
+                <div class="gc gc__hero">
+                  <img src="images/img01.jpg" alt="" class="gc__cover-img">
+                  <div class="gc__content">
+                    <h1>LookBook</h1>
+                    <h4>Jesie&#x144; 2015</h4>
+                    <div class="spacer"></div>
+                    <div class="btn__group">
+                      <a href="" class="btn btn--white">Dla Niej</a>
+                      <a href="" class="btn btn--white">Dla Niego</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gr&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc gc__hero&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/img01.jpg&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__cover-img&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>LookBook<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h4</span>&gt;</span>Jesie&#x144; 2015<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;spacer&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn__group&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn btn--white&quot;</span>&gt;</span>Dla Niej<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn btn--white&quot;</span>&gt;</span>Dla Niego<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-product-hero-box">
+          <div class="sg-text">
+            <h3 id="product-hero-box" class="sg">Product hero box</h3>
+            <p class="sg">A specific product page has a somewhat customised hero section to give justice the look of the product.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div class="page__product">
+                <!-- The above imitates the body class for product page layout -->
+
+                <div class="gr">
+                  <div class="gc gc__hero">
+                    <img src="images/prod/prod05.png" alt="" class="gc__product-image">
+                    <div class="gc__content">
+                      <h4>Lok&#xF3;wka</h4>
+                      <h1>CURL SECRET IONIC</h1>
+                      <h4>C1100E</h4>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page__product&quot;</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- The above imitates the body class for product page layout --&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gr&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc gc__hero&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/prod/prod05.png&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__product-image&quot;</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__content&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h4</span>&gt;</span>Lok&#xF3;wka<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>CURL SECRET IONIC<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h4</span>&gt;</span>C1100E<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-expert-feature">
+          <div class="sg-text">
+            <h3 id="expert-feature" class="sg">Expert feature</h3>
+            <p class="sg">As means of code recycling the expert&apos;s page uses a special box, instead of a hero box in order to present the expert&apos;s personal profile.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div class="page__ekspert">
+                <!-- The above imitates the body class for expert's page layout -->
+
+                <div class="gr">
+                  <div class="gc gc--special">
+                    <img src="images/eksprt/per04-portrait.jpg" alt="" class="img--side img--side--right">
+                    <div class="gc__content">
+                      <h4>prof. dr hab. n. med.</h4>
+                      <h1>&#x141;ukasz Preibisz</h1>
+                      <p>Jestem lekarzem dermatolog z ponad kilkunastoletnim do&#x15B;wiadczeniem, w tym ponad dziesi&#x119;cioletni sta&#x17C; pracy w Klinice Dermatologii Akademii Medycznej w Warszawie oraz na oddziale dermatologii dzieci&#x119;cej Szpitala &#x15A;w. &#x141;azarza na ul. Leszno w Warszawie. Bra&#x142;em udzia&#x142; w tworzeniu i kierowaniu Poradni&#x105; Dermatologiczn&#x105; w Wojew&#xF3;dzkim Szpitalu Br&#xF3;dnowskim w Warszawie.</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;page__ekspert&quot;</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- The above imitates the body class for expert&apos;s page layout --&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gr&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc gc--special&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/eksprt/per04-portrait.jpg&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;img--side img--side--right&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__content&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h4</span>&gt;</span>prof. dr hab. n. med.<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>&#x141;ukasz Preibisz<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Jestem lekarzem dermatolog z ponad kilkunastoletnim do&#x15B;wiadczeniem, w tym ponad dziesi&#x119;cioletni sta&#x17C; pracy w Klinice
+          Dermatologii Akademii Medycznej w Warszawie oraz na oddziale dermatologii dzieci&#x119;cej Szpitala &#x15A;w. &#x141;azarza na ul.
+          Leszno w Warszawie. Bra&#x142;em udzia&#x142; w tworzeniu i kierowaniu Poradni&#x105; Dermatologiczn&#x105; w Wojew&#xF3;dzkim Szpitalu Br&#xF3;dnowskim
+          w Warszawie.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+      </section>
+
+      <section class="sg-section sg-section-special-box">
+        <h2 id="special-box" class="sg">Special box</h2>
+        <section class="sg-block sg-section-clean">
+          <div class="sg-text">
+            <h3 id="clean" class="sg">Clean</h3>
+            <p class="sg">Visually emphasised wide box made for text and photo. Generated by adding
+              <code class="sg">gc--special</code>class to the
+              <code class="sg">gc</code>selector. Photo is optional. It&apos;s not friendly with the grid classes.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div class="gr">
+                <div class="gc gc--special">
+                  <div class="gc__content">
+                    <h2>Zosta&#x144; ambasadorem BaByliss</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, accusantium, veritatis. Similique quae eligendi vero et esse voluptatum quasi. Repudiandae distinctio in, quasi eum consequatur libero voluptate quod consectetur ea!</p>
+                    <a href="" class="btn btn--black">Do&#x142;&#x105;cz do nas</a>
+                    <a href="" class="btn btn--light">Dowiedz si&#x119; wi&#x119;cej...</a>
+                  </div>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gr&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc gc--special&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Zosta&#x144; ambasadorem BaByliss<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, accusantium, veritatis. Similique quae eligendi vero
+        et esse voluptatum quasi. Repudiandae distinctio in, quasi eum consequatur libero voluptate quod consectetur ea!<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn btn--black&quot;</span>&gt;</span>Do&#x142;&#x105;cz do nas<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn btn--light&quot;</span>&gt;</span>Dowiedz si&#x119; wi&#x119;cej...<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-side-image-special">
+          <div class="sg-text">
+            <h3 id="side-image-special" class="sg">Side image special</h3>
+            <p class="sg">By adding
+              <code class="sg">img--side--right</code>classname to the
+              <code class="sg">img--side</code>element, you will force the photo to be on the right side.</p>
+            <p class="sg">Note that the photo will try it&apos;s best to fit in height of the container. This means, if the photo is to wide or tall the effect will not be as desired.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div class="gr">
+                <div class="gc gc--special">
+                  <img src="images/img02.jpg" alt="" class="img--side">
+                  <div class="gc__content">
+                    <h2>Zosta&#x144; ambasadorem BaByliss</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, accusantium, veritatis. Similique quae eligendi vero et esse voluptatum quasi. Repudiandae distinctio in, quasi eum consequatur libero voluptate quod consectetur ea!</p>
+                    <a href="" class="btn btn--black">Do&#x142;&#x105;cz do nas</a>
+                    <a href="" class="btn btn--light">Dowiedz si&#x119; wi&#x119;cej...</a>
+                  </div>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gr&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc gc--special&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/img02.jpg&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;img--side&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Zosta&#x144; ambasadorem BaByliss<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, accusantium, veritatis. Similique quae eligendi vero
+        et esse voluptatum quasi. Repudiandae distinctio in, quasi eum consequatur libero voluptate quod consectetur ea!<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn btn--black&quot;</span>&gt;</span>Do&#x142;&#x105;cz do nas<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn btn--light&quot;</span>&gt;</span>Dowiedz si&#x119; wi&#x119;cej...<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+      </section>
+
+      <section class="sg-section sg-section-box-of-interest">
+        <h2 id="box-of-interest" class="sg">Box of interest</h2>
+        <section class="sg-block sg-section--">
+          <div class="sg-text">
+            <h3 id="-" class="sg">.</h3>
+            <p class="sg">Used for presenting the experts&apos;s content. Generated by adding the
+              <code class="sg">gc__interest</code>class to the
+              <code class="sg">gc</code>selector. It doesn&apos;t respond to grid classes.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div class="gr">
+                <div class="gc gc__interest">
+                  <img src="images/img04.jpg" alt="" class="gc__cover-img">
+                  <a href="" class="gc__content">
+                    <span>Ekspert radzi
+                      <strong>Suszenie czyni cuda</strong>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gr&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc gc__interest&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/img04.jpg&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__cover-img&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Ekspert radzi
+        <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>Suszenie czyni cuda<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+      </section>
+
+      <section class="sg-section sg-section-news-boxes">
+        <h2 id="news-boxes" class="sg">News boxes</h2>
+        <section class="sg-block sg-section--">
+          <div class="sg-text">
+            <h3 id="-" class="sg">.</h3>
+            <p class="sg">By adding a
+              <code class="sg">gc__news</code>classname to
+              <code class="sg">gc</code>you generate a news grid cell.</p>
+            <p class="sg">Except for the basic grid cell colors &#x2014; like
+              <code class="sg">gc--sky--darker</code>&#x2014; there are few news specific classnames.</p>
+            <p class="sg">
+              <code class="sg">gc__news--default</code>works for cells without a image.</p>
+            <p class="sg">
+              <code class="sg">gc__news--image</code>is specificaly for plain news stories with a cover image.</p>
+            <p class="sg">
+              <code class="sg">gc__news--facebook</code>
+              <code class="sg">gc__news--instagram</code>
+              <code class="sg">gc__news--youtube</code>are designed for the appropriate social media channels.</p>
+            <p class="sg">In order for the news to behave in an inine fashion, you should put them inside a
+              <code class="sg">page__listing--news</code>classname &#x2014; preferably on the
+              <code class="sg">&lt;body&gt;</code>.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div class="gr page__listing--news">
+
+                <div class="gc gc__news gc__news--default">
+                  <a href="article--news.html" class="gc__content">
+                    <span class="news-item__date">13.10.2015</span>
+                    <span class="news-item__title">
+                      <span class="news-item__category">Stylizacja</span>
+                      Tempora maiores consequatur reprehenderit ea, facilis sapiente ipsa et possimus.
+                    </span>
+                  </a>
+                </div>
+
+                <div class="gc gc__news gc__news--facebook">
+                  <img src="images/img45.jpg" alt="" class="gc__cover-img">
+                  <a href="article--news.html" class="gc__content">
+                    <span class="news-item__date">13.10.2015
+                      <i class="icon icon__facebook"></i>
+                    </span>
+                    <span class="news-item__title">
+                      <span class="news-item__category">Facebook</span>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </span>
+                  </a>
+                </div>
+
+                <div class="gc gc__news gc__news--instagram">
+                  <img src="images/img98.jpg" alt="" class="gc__cover-img">
+                  <a href="article--news.html" class="gc__content">
+                    <span class="news-item__date">13.10.2015
+                      <i class="icon icon__instagram"></i>
+                    </span>
+                    <span class="news-item__title">
+                      <span class="news-item__category">Instagram</span>
+                      Lorem ipsum sit amet, consectetur adipisicing elit.
+                    </span>
+                  </a>
+                </div>
+
+                <div class="gc gc__news gc__news--youtube">
+                  <img src="images/img01.jpg" alt="" class="gc__cover-img">
+                  <a href="article--news.html" class="gc__content">
+                    <span class="news-item__date">13.10.2015
+                      <i class="icon icon__youtube"></i>
+                    </span>
+                    <span class="news-item__title">
+                      <span class="news-item__category">Youtube</span>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing.
+                    </span>
+                  </a>
+                </div>
+
+                <div class="gc gc__news gc__news--image">
+                  <img src="images/img07.jpg" alt="" class="gc__cover-img">
+                  <a href="article--news.html" class="gc__content">
+                    <span class="news-item__date">13.10.2015</span>
+                    <span class="news-item__title">
+                      <span class="news-item__category">Stylizacja</span>
+                      Lorem ipsum dolor sit amet, consectetur elit.
+                    </span>
+                  </a>
+                </div>
+
+                <div class="gc gc--burn--dark gc__news">
+                  <a href="article--news.html" class="gc__content">
+                    <span class="news-item__date">13.10.2015</span>
+                    <span class="news-item__title">
+                      <span class="news-item__category">Stylizacja</span>
+                      Lorem ipsum dolor sit amet, adipisicing elit.
+                    </span>
+                  </a>
+                </div>
+
+                <div class="gc gc--sky--dark gc__news">
+                  <a href="article--news.html" class="gc__content">
+                    <span class="news-item__date">13.10.2015</span>
+                    <span class="news-item__title">
+                      <span class="news-item__category">Stylizacja</span>
+                      Lorem ipsum dolor sit, consectetur adipisicing elit.
+                    </span>
+                  </a>
+                </div>
+
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gr page__listing--news&quot;</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc gc__news gc__news--default&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;article--news.html&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;news-item__date&quot;</span>&gt;</span>13.10.2015<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;news-item__title&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;news-item__category&quot;</span>&gt;</span>Stylizacja<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        Tempora maiores consequatur reprehenderit ea, facilis sapiente ipsa et possimus.
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc gc__news gc__news--facebook&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/img45.jpg&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__cover-img&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;article--news.html&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;news-item__date&quot;</span>&gt;</span>13.10.2015
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;icon icon__facebook&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;news-item__title&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;news-item__category&quot;</span>&gt;</span>Facebook<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc gc__news gc__news--instagram&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/img98.jpg&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__cover-img&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;article--news.html&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;news-item__date&quot;</span>&gt;</span>13.10.2015
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;icon icon__instagram&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;news-item__title&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;news-item__category&quot;</span>&gt;</span>Instagram<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        Lorem ipsum sit amet, consectetur adipisicing elit.
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc gc__news gc__news--youtube&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/img01.jpg&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__cover-img&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;article--news.html&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;news-item__date&quot;</span>&gt;</span>13.10.2015
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;icon icon__youtube&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;news-item__title&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;news-item__category&quot;</span>&gt;</span>Youtube<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        Lorem ipsum dolor sit amet, consectetur adipisicing.
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc gc__news gc__news--image&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/img07.jpg&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__cover-img&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;article--news.html&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;news-item__date&quot;</span>&gt;</span>13.10.2015<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;news-item__title&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;news-item__category&quot;</span>&gt;</span>Stylizacja<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        Lorem ipsum dolor sit amet, consectetur elit.
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc gc--burn--dark gc__news&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;article--news.html&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;news-item__date&quot;</span>&gt;</span>13.10.2015<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;news-item__title&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;news-item__category&quot;</span>&gt;</span>Stylizacja<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        Lorem ipsum dolor sit amet, adipisicing elit.
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc gc--sky--dark gc__news&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;article--news.html&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;news-item__date&quot;</span>&gt;</span>13.10.2015<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;news-item__title&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;news-item__category&quot;</span>&gt;</span>Stylizacja<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        Lorem ipsum dolor sit, consectetur adipisicing elit.
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+      </section>
+
+      <section class="sg-section sg-section-featured-box">
+        <h2 id="featured-box" class="sg">Featured Box</h2>
+        <p class="sg">Used in news articles&apos; listings and for showing featured content (like and expert feature). Generated by adding
+          <code class="sg">gc__feature</code>class to the
+          <code class="sg">gc</code>selector.</p>
+        <section class="sg-block sg-section-image-feature">
+          <div class="sg-text">
+            <h3 id="image-feature" class="sg">Image feature</h3>
+            <p class="sg">It works well with the grid classes, such as
+              <code class="sg">gc--long</code>,
+              <code class="sg">gc--short</code>,
+              <code class="sg">gc--aspect-1to1</code>and
+              <code class="sg">gc--aspect-2to1</code>.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div class="gr">
+                <div class="gc gc--long gc--aspect-2to1 gc--burn--dark gc__feature">
+                  <img src="images/eksprt/per02.jpg" alt="" class="gc__cover-img">
+                  <a href="" class="gc__content">
+                    <h3>Beata</h3>
+                    <p class="small">Dermatolog</p>
+                    <p>Ekspert w depilacji cia&#x142;a.</p>
+                  </a>
+                </div>
+
+                <div class="gc gc--short gc--aspect-1to1 gc--grape--dark gc__feature">
+                  <img src="images/eksprt/per03.jpg" alt="" class="gc__cover-img">
+                  <a href="" class="gc__content">
+                    <h3>Iwona</h3>
+                    <p class="small">Stylistka w&#x142;os&#xF3;w</p>
+                  </a>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gr&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc gc--long gc--aspect-2to1 gc--burn--dark gc__feature&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/eksprt/per02.jpg&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__cover-img&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Beata<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;small&quot;</span>&gt;</span>Dermatolog<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Ekspert w depilacji cia&#x142;a.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc gc--short gc--aspect-1to1 gc--grape--dark gc__feature&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/eksprt/per03.jpg&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__cover-img&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Iwona<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;small&quot;</span>&gt;</span>Stylistka w&#x142;os&#xF3;w<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-imageless-feature">
+          <div class="sg-text">
+            <h3 id="imageless-feature" class="sg">Imageless feature</h3>
+            <p class="sg">It also can be without the cover image if needed. The Feature box works fine with the grid color classes like
+              <code class="sg">gc--sky--base</code>.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div class="gr">
+                <div class="gc gc--short gc--aspect-1to1 gc--sky--base gc__feature">
+                  <a href="" class="gc__content">
+                    <h3>Beata</h3>
+                    <p class="small">Dermatolog</p>
+                    <p>Ekspert w depilacji cia&#x142;a.</p>
+                  </a>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gr&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc gc--short gc--aspect-1to1 gc--sky--base gc__feature&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Beata<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;small&quot;</span>&gt;</span>Dermatolog<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Ekspert w depilacji cia&#x142;a.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+      </section>
+
+      <section class="sg-section sg-section-products">
+        <h2 id="products" class="sg">Products</h2>
+        <section class="sg-block sg-section-product-class-box">
+          <div class="sg-text">
+            <h3 id="product-class-box" class="sg">Product class box</h3>
+            <p class="sg">By adding a
+              <code class="sg">gc--product-class</code>classname to the
+              <code class="sg">gc</code>selector you generate a Product Class box. It gives you the ability to provide the product class name and additional navigation.</p>
+            <p class="sg">It does not work with the grid classes (size nor color ones). It&apos;s 50% in width and has an aspect of 1:1.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div class="gr">
+                <div class="gc gc--product-class">
+                  <img src="images/img03.jpg" alt="" class="gc__cover-img">
+                  <div class="gc__content">
+                    <h3>
+                      <span>Dla</span>Niej</h3>
+                    <a href="listing--products.html" class="link--product-category">Stylizacja</a>
+                    <a href="" class="link--product-category">Depilacja</a>
+                    <a href="" class="link--product-category">Akcesoria</a>
+                  </div>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gr&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc gc--product-class&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/img03.jpg&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__cover-img&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Dla<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>Niej<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;listing--products.html&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;link--product-category&quot;</span>&gt;</span>Stylizacja<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;link--product-category&quot;</span>&gt;</span>Depilacja<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;link--product-category&quot;</span>&gt;</span>Akcesoria<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-product-list-items">
+          <div class="sg-text">
+            <h3 id="product-list-items" class="sg">Product list items</h3>
+            <p class="sg">By adding a
+              <code class="sg">gc--product</code>classname to the
+              <code class="sg">gc</code>selector, you can generate a product list item.</p>
+            <p class="sg">The
+              <code class="sg">gc--product</code>works fine with the grid class like
+              <code class="sg">gc--tiny</code>and
+              <code class="sg">gc--aspect-1to1</code>. It also works fine with the grid color classes such as
+              <code class="sg">gc--burn--light</code>.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div class="gr">
+                <div class="gc gc--tiny gc--aspect-1to1 gc--burn--light gc--product">
+                  <img src="images/prod/prod01.png" alt="" class="gc__cover-img">
+                  <a href="" class="gc__content">
+                    <span>
+                      Modelowanie / dla niej
+                      <strong>Curl Secret ionic</strong>
+                    </span>
+                  </a>
+                </div>
+
+                <div class="gc gc--tiny gc--aspect-1to1 gc--grape--light gc--product">
+                  <img src="images/prod/prod02.png" alt="" class="gc__cover-img">
+                  <a href="" class="gc__content">
+                    <span>
+                      Modelowanie / Dla Niej
+                      <strong>Twist Secret</strong>
+                    </span>
+                  </a>
+                </div>
+
+                <div class="gc gc--half gc--aspect-2to1 gc--sky--light gc--product">
+                  <img src="images/prod/prod05.png" alt="" class="gc__cover-img">
+                  <a href="" class="gc__content">
+                    <span>
+                      Suszenie / Dla Niej
+                      <strong>Le Pro 2200W</strong>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gr&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc gc--tiny gc--aspect-1to1 gc--burn--light gc--product&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/prod/prod01.png&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__cover-img&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>
+        Modelowanie / dla niej
+        <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>Curl Secret ionic<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc gc--tiny gc--aspect-1to1 gc--grape--light gc--product&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/prod/prod02.png&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__cover-img&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>
+        Modelowanie / Dla Niej
+        <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>Twist Secret<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc gc--half gc--aspect-2to1 gc--sky--light gc--product&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/prod/prod05.png&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__cover-img&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>
+        Suszenie / Dla Niej
+        <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>Le Pro 2200W<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+      </section>
+
+      <section class="sg-section sg-section-galleries">
+        <h2 id="galleries" class="sg">Galleries</h2>
+        <section class="sg-block sg-section-article-image-gallery">
+          <div class="sg-text">
+            <h3 id="article-image-gallery" class="sg">Article image gallery</h3>
+            <p class="sg">By adding a
+              <code class="sg">gc__article-gallery</code>classname to the
+              <code class="sg">gc</code>element you can generate a responsive, masonery-like gallery of links to images. The gallery items must have
+              <code class="sg">article-gallery__item</code>class name.</p>
+            <p class="sg">You can use
+              <code class="sg">&lt;a href&gt;</code>element as the gallery items. By linking them to full resolution images and adding a
+              <code class="sg">data-featherlight=&quot;image&quot;</code>attribute, you will generate a gallery opening each image in a model.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div class="gr">
+                <div class="gc gc--full gc__article-gallery">
+                  <a href="images/img01.jpg" class="article-gallery__item" data-featherlight="image">
+                    <img src="images/img01.jpg" alt="">
+                  </a>
+                  <a href="images/img02.jpg" class="article-gallery__item" data-featherlight="image">
+                    <img src="images/img02.jpg" alt="">
+                  </a>
+                  <a href="images/img03.jpg" class="article-gallery__item" data-featherlight="image">
+                    <img src="images/img03.jpg" alt="">
+                  </a>
+                  <a href="images/img04.jpg" class="article-gallery__item" data-featherlight="image">
+                    <img src="images/img04.jpg" alt="">
+                  </a>
+                  <a href="images/img05.jpg" class="article-gallery__item" data-featherlight="image">
+                    <img src="images/img05.jpg" alt="">
+                  </a>
+                  <a href="images/img06.jpg" class="article-gallery__item" data-featherlight="image">
+                    <img src="images/img06.jpg" alt="">
+                  </a>
+                  <a href="images/img07.jpg" class="article-gallery__item" data-featherlight="image">
+                    <img src="images/img07.jpg" alt="">
+                  </a>
+                  <a href="images/img08.jpg" class="article-gallery__item" data-featherlight="image">
+                    <img src="images/img08.jpg" alt="">
+                  </a>
+                  <a href="images/img09.jpg" class="article-gallery__item" data-featherlight="image">
+                    <img src="images/img09.jpg" alt="">
+                  </a>
+                  <a href="images/img10.jpg" class="article-gallery__item" data-featherlight="image">
+                    <img src="images/img10.jpg" alt="">
+                  </a>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gr&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc gc--full gc__article-gallery&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;images/img01.jpg&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;article-gallery__item&quot;</span> <span class="hljs-attribute">data-featherlight</span>=<span class="hljs-value">&quot;image&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/img01.jpg&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;images/img02.jpg&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;article-gallery__item&quot;</span> <span class="hljs-attribute">data-featherlight</span>=<span class="hljs-value">&quot;image&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/img02.jpg&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;images/img03.jpg&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;article-gallery__item&quot;</span> <span class="hljs-attribute">data-featherlight</span>=<span class="hljs-value">&quot;image&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/img03.jpg&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;images/img04.jpg&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;article-gallery__item&quot;</span> <span class="hljs-attribute">data-featherlight</span>=<span class="hljs-value">&quot;image&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/img04.jpg&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;images/img05.jpg&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;article-gallery__item&quot;</span> <span class="hljs-attribute">data-featherlight</span>=<span class="hljs-value">&quot;image&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/img05.jpg&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;images/img06.jpg&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;article-gallery__item&quot;</span> <span class="hljs-attribute">data-featherlight</span>=<span class="hljs-value">&quot;image&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/img06.jpg&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;images/img07.jpg&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;article-gallery__item&quot;</span> <span class="hljs-attribute">data-featherlight</span>=<span class="hljs-value">&quot;image&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/img07.jpg&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;images/img08.jpg&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;article-gallery__item&quot;</span> <span class="hljs-attribute">data-featherlight</span>=<span class="hljs-value">&quot;image&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/img08.jpg&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;images/img09.jpg&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;article-gallery__item&quot;</span> <span class="hljs-attribute">data-featherlight</span>=<span class="hljs-value">&quot;image&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/img09.jpg&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;images/img10.jpg&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;article-gallery__item&quot;</span> <span class="hljs-attribute">data-featherlight</span>=<span class="hljs-value">&quot;image&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/img10.jpg&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+      </section>
+
+      <section class="sg-section sg-section-forms">
+        <h2 id="forms" class="sg">Forms</h2>
+        <section class="sg-block sg-section-newsletter-subscription">
+          <div class="sg-text">
+            <h3 id="newsletter-subscription" class="sg">Newsletter subscription</h3>
+            <p class="sg">The newsletter subscription cell is generated by providing
+              <code class="sg">gc__form--newsletter</code>.</p>
+            <p class="sg">It has customisable copy text (try to keep it short and clear), needs a cover image and uses
+              <code class="sg">newsletter__email</code>and
+              <code class="sg">newsletter__submit</code>
+              classes on the
+              <code class="sg">&lt;figure&gt;</code>selectors to fascilitate the input and submit elements.</p>
+            <p class="sg">It does work with the grid sizing classes &#x2014; like
+              <code class="sg">gc--full</code>and
+              <code class="sg">gc--aspect-3to1</code>&#x2014; not the color ones though.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div class="gr">
+                <div class="gc gc--full gc--aspect-3to1 gc__form--newsletter">
+                  <img src="images/img07.jpg" alt="" class="gc__cover-img">
+
+                  <div class="gc__content">
+                    <p>Podoba Ci si&#x119; ten artyku&#x142;? Mamy tego wi&#x119;cej...</p>
+                    <h4>Subskrybuj Newsletter</h4>
+
+                    <figure class="newsletter__email">
+                      <input class="input input--inverse" type="text" name="email" value="" placeholder="Podaj aktualny adres e-mail...">
+                      <label for="email">Tw&#xF3;j e-mail</label>
+                    </figure>
+                    <figure class="newsletter__submit">
+                      <a href="#" class="btn btn--white">Zapisz si&#x119;...</a>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gr&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc gc--full gc--aspect-3to1 gc__form--newsletter&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/img07.jpg&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__cover-img&quot;</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Podoba Ci si&#x119; ten artyku&#x142;? Mamy tego wi&#x119;cej...<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">h4</span>&gt;</span>Subskrybuj Newsletter<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+
+      <span class="hljs-tag">&lt;<span class="hljs-title">figure</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;newsletter__email&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;input input--inverse&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;email&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;Podaj aktualny adres e-mail...&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;email&quot;</span>&gt;</span>Tw&#xF3;j e-mail<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">figure</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">figure</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;newsletter__submit&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn btn--white&quot;</span>&gt;</span>Zapisz si&#x119;...<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">figure</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+        <section class="sg-block sg-section-registration-form">
+          <div class="sg-text">
+            <h3 id="registration-form" class="sg">Registration form</h3>
+            <p class="sg">By adding a
+              <code class="sg">gc__form</code>classname to the
+              <code class="sg">gc</code>you can generate a larger input form set.</p>
+            <p class="sg">Try to keep the label after the input field.</p>
+          </div>
+          <div class="sg-example">
+            <div class="sg-canvas">
+              <div class="gr gr--column">
+                <div class="gc gc--long gc__form">
+                  <div class="gc__content">
+                    <figure>
+                      <input class="input" type="text" name="name" value="" placeholder="Jak mamy si&#x119; do Ciebie zwraca&#x107;?">
+                      <label for="name">Twoje imi&#x119; i nazwisko</label>
+                    </figure>
+                    <figure>
+                      <input class="input" type="text" name="email" value="" placeholder="Podaj aktualny adres e-mail...">
+                      <label for="email">Tw&#xF3;j e-mail</label>
+                    </figure>
+                    <figure>
+                      <input class="input" type="text" name="phone" value="" placeholder="Podaj aktualny numer kontaktowy...">
+                      <label for="phone">Numer telefonu</label>
+                    </figure>
+                    <figure>
+                      <input class="checkbox" type="checkbox" name="rules" value="" placeholder="Podaj aktualny numer kontaktowy...">
+                      <label for="rules">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores sunt at laudantium ratione labore ut quam ex accusamus, pariatur atque ipsam veniam odit reiciendis asperiores! Aspernatur saepe provident ratione sapiente.</label>
+                    </figure>
+
+                    <figure class="btn__submit">
+                      <a href="#" class="btn btn--light">Anuluj</a>
+                      <a href="#" class="btn btn--default">Zapisz si&#x119;...</a>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gr gr--column&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc gc--long gc__form&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;gc__content&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">figure</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;input&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;name&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;Jak mamy si&#x119; do Ciebie zwraca&#x107;?&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;name&quot;</span>&gt;</span>Twoje imi&#x119; i nazwisko<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">figure</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">figure</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;input&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;email&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;Podaj aktualny adres e-mail...&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;email&quot;</span>&gt;</span>Tw&#xF3;j e-mail<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">figure</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">figure</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;input&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;phone&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;Podaj aktualny numer kontaktowy...&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;phone&quot;</span>&gt;</span>Numer telefonu<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">figure</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">figure</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;checkbox&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;rules&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;Podaj aktualny numer kontaktowy...&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;rules&quot;</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores sunt at laudantium ratione labore ut quam ex accusamus,
+          pariatur atque ipsam veniam odit reiciendis asperiores! Aspernatur saepe provident ratione sapiente.<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">figure</span>&gt;</span>
+
+      <span class="hljs-tag">&lt;<span class="hljs-title">figure</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn__submit&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn btn--light&quot;</span>&gt;</span>Anuluj<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn btn--default&quot;</span>&gt;</span>Zapisz si&#x119;...<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">figure</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
+          </div>
+        </section>
+      </section>
+
+    </div>
+    <p class="center">&#xA9; Trepka</p>
+  </div>
+  <script src="https://cdn.rawgit.com/styledown/styledown/v1.0.2/data/styledown.js"></script>
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <script src="js/isotope.pkgd.min.js"></script>
+  <script src="js/typeahead.bundle.min.js"></script>
+  <script src="js/jquery.placeholder.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/styleguide.js"></script>
+</body>
+
+</html>

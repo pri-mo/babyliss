@@ -1,0 +1,17 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the expert's page.
+// -----------------------------------------------------------------------------
+.page__ekspert {
+
+	.gc--special {
+		.gc__content { padding: 2.64rem; }
+		h1 { margin: 1rem 0; width: 50%; }
+		p { padding-top: 2rem; }
+		&:after { border: 5px solid $black; }
+
+		@include respond-to('medium') {
+			h1 { width: 100%; }
+		}
+	}
+
+}

@@ -1,0 +1,75 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Font families
+/// @type List
+$text-font: 'proxima-nova', 'Proxima Nova', Helvetica, Arial, sans-serif !default;
+$header-font: 'abril-display', 'Lucida Bright', Georgia, serif !default;
+
+/// Basic font size
+/// @type Length
+$text-font-size: calc( 12px + (14 - 12) * ( (100vw - 320px) / ( 800 - 320) )) !default;
+
+/// Header sizes
+/// @type Length
+$header-big: calc( 42px + (62 - 42) * ( (100vw - 320px) / ( 800 - 320) ) ) !default;
+$header-medium: calc( 22px + (30 - 22) * ( (100vw - 320px) / ( 800 - 320) ) ) !default;
+$header-small: calc( 18px + (18 - 18) * ( (100vw - 320px) / ( 800 - 320) ) ) !default;
+
+/// Copy text color
+/// @type Color
+$text-color: #4d4d4d !default;
+
+/// Main brand colors
+/// @type Color
+$brand-color: #000 !default;
+$white: #fff !default;
+$grey: darken($white, 50%) !default;
+$cloud: darken($white, 3%) !default;
+$black: #111 !default;
+
+$sun: #dfae66 !default;
+$burn: #dba26e !default;
+$sky: #3e719f !default;
+$grape: #a34d9d !default;
+$smoke: #959490 !default;
+
+$sun-palette: palette($sun) !default;
+$burn-palette: palette($burn) !default;
+$sky-palette: palette($sky) !default;
+$grape-palette: palette($grape) !default;
+$smoke-palette: palette($smoke) !default;
+
+/// Consistent drop shadow
+/// @type CSS
+$shadow: 0 6px 24px rgba(0,0,0,.22) !default;
+
+/// Consistent transition
+/// @type CSS
+$transition: .25s all .0s !default;
+$transition-l: 1s all .0s !default;
+
+/// Container's maximum width
+/// Below that is 100%
+/// @type Length
+$max-width: 1330px !default;
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+/// @see {mixin} respond-to
+$breakpoints: (
+  'tiny': (max-width: 320px),
+  'small': (max-width: 480px),
+  'medium': (max-width: 768px),
+  'large': (max-width: 1024px),
+  'default': (max-width: 1329px),
+  'huge': (min-width: 1330px)
+) !default;
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '/assets/' !default;

@@ -1,0 +1,163 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+// Regular button
+@mixin button($color) {
+  font-weight: 800;
+  line-height: .8rem;
+  margin: .36rem 0;
+  padding: .64rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: $transition;
+
+  background-color: transparent;
+  border: 2px solid $color;
+  color: $color;
+
+  @include on-event {
+    background-color: $color;
+    border-color: transparentize($color, 1);
+    color: setTextColor($color);
+    text-decoration: none;
+    box-shadow: $shadow;
+    outline: none;
+  }
+
+  p + & {
+    margin-top: .64rem;
+  }
+
+  @include when-inside('.btn__group') {
+    &:not(:last-child):not(:first-child) {
+      border-left: 0;
+      border-right: 0;
+    }
+    &:first-child { border-right: 0;}
+    &:last-child { border-left: 0;}
+
+    @include respond-to('small') {
+      border: 2px solid $color !important;
+      margin: 0.15rem 0;
+    }
+  }
+
+  @include when-inside('.btn__group--long') {
+    & { font-size: .8rem; }
+  }
+
+}
+
+// Inverse button
+@mixin inv-button($color) {
+  font-weight: 800;
+  line-height: 1em;
+  margin: .36rem 0;
+  padding: .64rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: $transition;
+
+  background-color: $color;
+  border: 2px solid $color;
+  color: setTextColor($color);
+
+  @include on-event {
+    background-color: setTextColor($color);
+    border-color: $color;
+    color: $color;
+    text-decoration: none;
+    box-shadow: $shadow;
+    outline: none;
+  }
+
+  p + & {
+    margin-top: .64rem;
+  }
+
+  @include when-inside('.btn__group') {
+    &:not(:last-child):not(:first-child) {
+      border-left: 0;
+      border-right: 0;
+    }
+    &:first-child { border-right: 0;}
+    &:last-child { border-left: 0;}
+  }
+
+}
+
+// Icon button next to input field
+@mixin icon-button($color) {
+  background-color: transparent;
+  border: 0;
+  height: 1rem;
+  margin-left: -1rem;
+  overflow: visible;
+  padding: .36rem;
+  position: relative;
+  text-indent: -9999px;
+  width: 1rem;
+  z-index: 110;
+
+  .twitter-typeahead + & {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &:after {
+    transition: $transition;
+    display: block;
+    color: rgba($color, .64);
+    background-color: transparent;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: .5rem;
+
+    .twitter-typeahead + & {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  @include on-sibling-event(input) {
+    &:after { color: $color; }
+  }
+
+  @include on-event {
+    outline: none;
+
+    &:after {
+      color: setTextColor($color)!important;
+      background-color: $color;
+    }
+  }
+
+}
+.btn__spread { @extend %cf;}
+.btn {
+  display: inline-block;
+
+  @include when-inside('.btn__spread') {
+    &:first-child { float: left;}
+    &:last-child { float: right;}
+  }
+
+  &.btn--default { @include button($text-color); }
+  &.btn--inverse { @include inv-button($text-color); }
+  &.btn--brand { @include button($brand-color);}
+  &.btn--white { @include button($white); }
+  &.btn--black { @include button($black); }
+  &.btn--light { @include button(rgba($grey, .7)); }
+
+  &.btn--inv-brand { @include inv-button($brand-color);}
+  &.btn--inv-black { @include inv-button($black); }
+
+  &.btn--icon-default { @include icon-button($text-color);}
+  &.btn--icon-white { @include icon-button($white);}
+
+}

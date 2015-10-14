@@ -1,0 +1,482 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the cells component.
+// -----------------------------------------------------------------------------
+
+// Footer cells
+.gc--brand {
+  .logo {
+    margin: 2rem auto; width: 64%;
+    @include respond-to('medium') { display: none; }
+  }
+}
+
+// News box
+.gc__news {
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0, .1);
+
+  .gc__cover-img {
+    opacity: .64;
+
+    @include respond-to('medium') {
+      opacity: .36;
+    }
+  }
+
+  .gc__content {
+    @extend %spread-out;
+    color: inherit;
+    display: block;
+    text-decoration: none;
+
+    &:after {
+      @extend %fake-block;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      border-width: 0px;
+      transition: $transition;
+    }
+
+    span { display: block; position: absolute; left: 1rem;right: 1rem; }
+    .news-item__date { top: 1rem; font-weight: 600; font-size: .75rem;  line-height: 1em; }
+    .news-item__date .icon { float: right; font-size: 1.36rem; }
+    .news-item__category { position: static; font-weight: 600; font-size: .75rem; text-transform: uppercase; }
+    .news-item__title { bottom: 1rem; }
+  }
+
+  @include on-event {
+    .gc__content:after {
+      border-width: 2px;
+      top: .5rem;
+      right: .5rem;
+      bottom: .5rem;
+      left: .5rem;
+    }
+    .gc__cover-img { opacity: .36; }
+  }
+
+  &.gc__news--default { @include gc($white); }
+  &.gc__news--image { @include gc($brand-color); }
+  &.gc__news--facebook { @include gc(#3b5998); }
+  &.gc__news--instagram { @include gc(#9b6954); }
+  &.gc__news--youtube { @include gc(#b00000); }
+}
+
+// Hero box
+.gc__hero {
+  @include gridWidth(1);
+  @include aspect(1/2.64);
+  overflow: hidden;
+  background-color: $black;
+
+  @include respond-to('medium') {
+    &:before {
+      padding-bottom: (100% / 2.64);
+    }
+  }
+
+  @include respond-to('small') {
+    padding: 3rem 0;
+  }
+
+  .gc__content {
+    color: $white;
+    text-align: center;
+    position: absolute;
+    top: 50%; left: 0; right: 0;
+    transform: translateY(-50%);
+  }
+
+  .gc__cover-img {
+
+    &.gc__cover-img--wide,
+    &.gc__cover-img--tall,
+    &.gc__cover-img--sqr { width: 110%; height: auto; }
+
+    @include respond-to('medium') {
+      &.gc__cover-img--wide,
+      &.gc__cover-img--tall,
+      &.gc__cover-img--sqr { width: 110%; height: auto; }
+    }
+  }
+
+}
+
+// Special Box
+.gc--special {
+  @include gridWidth(1);
+  overflow: hidden;
+  background-color: $white;
+  color: $black;
+  min-height: 25vw;
+
+  &:after {
+    @extend %fake-block;
+    position: absolute;
+    top: 1rem; bottom: 1rem;
+    left: 1rem; right: 1rem;
+    border: 3px solid $black;
+  }
+
+  .img--side {
+    position: absolute;
+    left: 0;
+    top: 50%; transform: translateY(-50%);
+    height: 110%;
+
+    & + .gc__content {
+      margin-left: 25%;
+      width: 75%;
+    }
+
+    &.img--side--right {
+      left: auto; right: 0;
+
+      & + .gc__content {
+        margin-left: 0;
+        width: 75%;
+      }
+    }
+
+    @include respond-to('medium') {
+      z-index: 0;
+      opacity: .64;
+
+      & + .gc__content h2 { width: 64%; }
+    }
+
+    @include respond-to('small') {
+      left: auto;
+      right: 50%;
+
+      &.img--side--right { right: auto; left: 50%; }
+    }
+
+    @include respond-to('huge') {
+      height: 120%;
+    }
+  }
+
+  .gc__content {
+    position: relative;
+    padding: 1.64rem 2rem;
+    z-index: 10;
+
+    h2 { padding-top: 1rem;  padding-bottom: 2rem; }
+    p:last-of-type { padding-bottom: 2rem; }
+  }
+}
+
+// Product class
+.gc--product-class {
+  @include gridWidth(1/2);
+  @include aspect(1);
+  overflow: hidden;
+  background-color: $black;
+  color: $white;
+
+  @include respond-to('small') {
+    width: 100%;
+
+    & + .gc--half {
+      width: 100%;
+    }
+  }
+
+  .gc__content {
+    text-align: center;
+    position: absolute;
+    top: 50%; left: 0; right: 0;
+    transform: translateY(-50%);
+
+    h3 { font: italic 900 $header-big / .9em $header-font; }
+    h3 span {
+      display: block;
+      font: normal 700 $text-font-size / 2em $text-font;
+      text-transform: uppercase;
+      letter-spacing: normal;
+    }
+
+    .link--product-category {
+      position: relative;
+      display: block;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 1rem 0;
+      padding: .36rem;
+      transition: $transition;
+
+      @include on-event {
+        color: inherit;
+        background-color: rgba($black, .36);
+      }
+
+      &:after, &:first-of-type:before {
+        @extend %fake-block;
+        width: 2rem;
+        height: 1px;
+        position: absolute;
+        left: 50%;
+        bottom: -.5rem;
+        margin-left: -1rem;
+        background-color: rgba($white, .64);
+      }
+      &:first-of-type:before { bottom: auto; top: -.5rem; }
+    }
+  }
+}
+
+// Product Box
+.gc--product {
+  overflow: hidden;
+  text-align: center;
+  text-transform: uppercase;
+  color: $white;
+
+  .gc__content {
+    @extend %spread-out;
+    color: inherit;
+    display: block;
+    text-decoration: none;
+
+    &:before {
+      @extend %fake-block;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.05);
+      transition: $transition;
+    }
+    &:after {
+      @extend %fake-block;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      border-width: 0;
+      border-style: solid;
+      border-color: $white;
+      transition: $transition;
+    }
+
+    span {
+      display: block;
+      position: absolute;
+      top: 50%; left: 0; right: 0;
+      transform: translateY(-50%);
+      font-size: .8rem;
+      line-height: 1.36em;
+    }
+    strong {
+      display: block;
+      font-size: 1rem;
+    }
+
+    @include on-event {
+      &:before {
+        background-color: rgba(0, 0, 0, .36);
+      }
+      &:after {
+        border-width: 2px;
+        top: .5rem;
+        right: .5rem;
+        bottom: .5rem;
+        left: .5rem;
+      }
+    }
+
+  }
+
+  .gc__cover-img {
+    top: 100%;
+
+    &.gc__cover-img--tall { width: 60%; height: auto;}
+    &.gc__cover-img--wide,
+    &.gc__cover-img--sqr { width: 90%;height: auto;}
+  }
+
+  &:hover .gc__cover-img {
+    transform: translate(-50%, -53%);
+  }
+
+  @include respond-to('medium') {
+    &.gc--aspect-2to1 {
+      width: 100%;
+      &:before { padding-bottom: 50%; }
+    }
+
+    .gc__cover-img--tall { width: 60%; }
+    .gc__cover-img--wide,
+    .gc__cover-img--sqr { width: 90%;}
+  }
+
+}
+
+.product-gallery__sizer {
+  width: (100% / 4);
+  @include respond-to('medium') { width: (100% / 2); }
+}
+
+// Interest Box
+.gc.gc__interest {
+  background-color: $brand-color;
+  color: $white;
+  overflow: hidden;
+  text-align: center;
+  text-transform: uppercase;
+
+  @include aspect(1);
+  @include gridWidth(1/3);
+  @include respond-to('medium') { @include gridWidth(1/2); }
+
+  .gc__content {
+    @extend %spread-out;
+    color: inherit;
+    display: block;
+    text-decoration: none;
+
+    &:before {
+      @extend %fake-block;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      border: 2px solid rgba($white, 0);
+      transition: $transition;
+    }
+
+    span {
+      display: block;
+      position: absolute;
+      top: 50%; left: 1rem; right: 1rem;
+      transform: translateY(-50%);
+      font-size: .8rem;
+      line-height: 1.36em;
+    }
+    strong {
+      display: block;
+      font-size: 1rem;
+    }
+
+    @include on-event {
+      &:before {
+        border-color: $white;
+        top: .5rem;
+        right: .5rem;
+        bottom: .5rem;
+        left: .5rem;
+      }
+    }
+
+  }
+
+  .gc__cover-img { opacity: .88; }
+  &:hover .gc__cover-img { opacity: .36; transform: translate(-50%, -50%) scale(1.1); }
+
+}
+
+// Feature Box
+.gc__feature {
+  overflow: hidden;
+
+  .gc__cover-img { opacity: .88; }
+  &:hover .gc__cover-img { opacity: .36; filter: grayscale(100%); transform: translate(-50%, -50%) scale(1.1); }
+  @include respond-to('medium') { .gc__cover-img {opacity: .64; } }
+  @include respond-to('small') {
+    &.gc--aspect-1to1, &.gc--aspect-2to1 { width: 100%; }
+    &.gc--aspect-1to1:before, &.gc--aspect-2to1:before { display: none; }
+    &.gc--aspect-1to1 .gc__cover-img--wide { width: 110%; height: auto; }
+  }
+
+  &:after {
+    @extend %fake-block;
+    border-width: 0;
+    border-style: solid;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    transition: $transition;
+    z-index: 0;
+  }
+
+  @include on-event {
+    &:after {
+      border-width: 2px;
+      top: .5rem;
+      right: .5rem;
+      bottom: .5rem;
+      left: .5rem;
+    }
+  }
+
+  .gc__content {
+    bottom: 0;
+    min-height: 0;
+    top: auto;
+    text-decoration: none;
+    z-index: 1;
+    padding: 1.5rem;
+
+    @include on-event {
+      color: inherit;
+    }
+
+    &, *, &:before { cursor: pointer; }
+    &:before { @extend %fake-block; position: absolute; left: 0; right: 0;bottom: 100%; min-height: 200%; }
+
+    .news-item__date { display: block; position: absolute; left: 1.5rem; right: 1.5rem; top: 0rem; font-weight: 600; font-size: .75rem;  line-height: 1em; }
+    .news-item__date .icon { float: right; font-size: 1.36rem; }
+    .news-item__category { position: static; font-weight: 600; font-size: .75rem; text-transform: uppercase; }
+    .small { font-size: .75rem; line-height: 1em; text-transform: uppercase; padding: 0; }
+
+    @include respond-to('small') {
+      min-height: 50vw;
+      position: relative;
+      display: block;
+
+      &:before { display: none; }
+
+      .news-item__date,
+      .news-item__category,
+      .small
+      { position: static; }
+    }
+  }
+}
+
+// Input Form Cell
+.gc__form,
+.gc__form--newsletter {
+  figure { margin: 1rem 0;}
+  .btn__group, .btn__submit {float: right;}
+}
+
+.gc.gc__form--newsletter {
+  background-color: $brand-color;
+  .gc__cover-img { opacity: .36; }
+  .gc__content { text-align: center; padding: 1.64rem; line-height: 2rem;}
+  .newsletter__email {
+    margin: 0;
+    position: absolute;
+    top: 50%; left: 50%; width: calc(100% - 2rem); max-width: 30rem; transform: translate(-50%, -50%);
+  }
+  .newsletter__submit {position: absolute; bottom: 1.64rem; left: 50%; margin: 0; transform: translate(-50%, 0%)}
+
+  @include respond-to('medium') {
+    width: 100%;
+    &:before { padding-bottom: 50%;}
+  }
+  @include respond-to('small') {
+    width: 100%;
+    &:before { padding-bottom: 100%;}
+  }
+}
