@@ -9,6 +9,7 @@ module.exports = function(grunt) {
         },
         files: {
           'dist/css/main.css': 'src/sass/main.scss',
+          '../babyliss-front/css/main.css': 'src/sass/main.scss',
         },
       },
       minify: {
@@ -18,6 +19,7 @@ module.exports = function(grunt) {
         },
         files: {
           'dist/css/main.min.css': 'src/sass/main.scss',
+          '../babyliss-front/css/main.min.css': 'src/sass/main.scss',
         },
       },
     },
@@ -27,6 +29,8 @@ module.exports = function(grunt) {
         files: {
           'dist/_complex.html': ['src/styleguide/complex.md'],
           'dist/_basics.html': ['src/styleguide/basics.md'],
+          '../babyliss-front/_complex.html': ['src/styleguide/complex.md'],
+          '../babyliss-front/_basics.html': ['src/styleguide/basics.md'],
         },
         options: {
           title: 'Style Guide',
@@ -59,7 +63,10 @@ module.exports = function(grunt) {
         ],
       },
       dist: {
-        src: 'dist/css/*.css',
+        src: [
+          'dist/css/*.css',
+          '../babyliss-front/css/*.css',
+        ],
       },
     },
 

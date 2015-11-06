@@ -110,7 +110,7 @@ The site uses two font families — a header font and a body type font.
     <div class="gr">
       <div class="gc gc--full"><div class="gc__content">
         <small>Header fonts</small>
-        <h3>Abril Display, Bold Italic, uppercase</h3>
+        <h3>Abril Display, Black Italic (900), uppercase</h3>
       </div></div>
       <div class="gc gc--full"><div class="gc__content">
         <small>Alternative header font</small>

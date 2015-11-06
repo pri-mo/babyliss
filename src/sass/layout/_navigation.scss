@@ -17,7 +17,6 @@ nav ul {
 
     @include respond-to('medium') {
       color: $white;
-      font-size: 1rem;
     }
   }
 
@@ -29,6 +28,7 @@ nav ul {
 
     @include respond-to('medium') {
       padding: .36rem;
+      font-size: 1rem;
     }
 
     i {
@@ -175,6 +175,7 @@ nav ul {
   }
 
   .nav__logo {
+    width: 100%;
     padding: 3rem 11%;
     transition: $transition;
 
@@ -236,7 +237,7 @@ nav ul {
   .nav--opened &:before { transform: translate(-50%, -50%) rotate(180deg); }
 }
 
-.nav--on-scroll {
+.desktop.nav--on-scroll {
   .nav__top { max-height: 4rem; min-height: 0; overflow: hidden; }
   .nav__mobile-trigger { right: .75rem;}
   .nav__logo { padding: .5rem 0 3rem; width: 70%; }

@@ -55,7 +55,7 @@
       bottom: .5rem;
       left: .5rem;
     }
-    .gc__cover-img { opacity: .36; }
+    .gc__cover-img { opacity: .36; filter:grayscale(100%); transform: translate(-50%, -50%) scale(1.1); }
   }
 
   &.gc__news--default { @include gc($white); }
@@ -123,9 +123,9 @@
 
   .img--side {
     position: absolute;
-    left: 0;
+    left: -2rem;
     top: 50%; transform: translateY(-50%);
-    height: 110%;
+    height: 100%;
 
     & + .gc__content {
       margin-left: 25%;
@@ -133,7 +133,7 @@
     }
 
     &.img--side--right {
-      left: auto; right: 0;
+      left: auto; right: -2rem;
 
       & + .gc__content {
         margin-left: 0;
@@ -153,10 +153,6 @@
       right: 50%;
 
       &.img--side--right { right: auto; left: 50%; }
-    }
-
-    @include respond-to('huge') {
-      height: 120%;
     }
   }
 
@@ -235,12 +231,14 @@
   text-align: center;
   text-transform: uppercase;
   color: $white;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.036);
 
   .gc__content {
     @extend %spread-out;
     color: inherit;
     display: block;
     text-decoration: none;
+    text-shadow: 0 0 1px rgba(0,0,0,.64), 0 2px 1px rgba(0,0,0,.1), 0 0 1rem rgba(0,0,0,.36);
 
     &:before {
       @extend %fake-block;
@@ -249,7 +247,7 @@
       bottom: 0;
       left: 0;
       position: absolute;
-      background-color: rgba(0, 0, 0, 0.05);
+      background-color: rgba(0, 0, 0, 0.136);
       transition: $transition;
     }
     &:after {
@@ -268,7 +266,7 @@
     span {
       display: block;
       position: absolute;
-      top: 50%; left: 0; right: 0;
+      top: 50%; left: 1.5rem; right: 1.5rem;
       transform: translateY(-50%);
       font-size: .8rem;
       line-height: 1.36em;
@@ -294,15 +292,28 @@
   }
 
   .gc__cover-img {
-    top: 100%;
+    transform: translate(-50%, -0%);
+    top: 10%;
+    opacity: .95;
 
-    &.gc__cover-img--tall { width: 60%; height: auto;}
-    &.gc__cover-img--wide,
-    &.gc__cover-img--sqr { width: 90%;height: auto;}
+    &.gc__cover-img--tall, &.gc__cover-img--very-tall, &.gc__cover-img--stick { width: 75%; height: auto;}
+    &.gc__cover-img--wide, &.gc__cover-img--sqr { width: 90%; height: auto;}
+    &.gc__cover-img--sqr { top: 10%; }
   }
 
   &:hover .gc__cover-img {
-    transform: translate(-50%, -53%);
+    transform: translate(-50%, -3%);
+    opacity: 1;
+  }
+
+  &.gc--aspect-1to2 {
+    .gc__cover-img--tall { top: 50%; transform: translate(-50%, -50%);}
+    .gc__cover-img--very-tall { top: 60%; width: 64%; transform: translate(-50%, -50%);}
+    .gc__cover-img--stick { top: 60%; width: 40%; transform: translate(-50%, -50%);}
+
+    &:hover .gc__cover-img {
+      transform: translate(-50%, -53%);
+    }
   }
 
   @include respond-to('medium') {
@@ -310,8 +321,11 @@
       width: 100%;
       &:before { padding-bottom: 50%; }
     }
+    &.gc--aspect-1to2 {
+      &:before { padding-bottom: 200%; }
+    }
 
-    .gc__cover-img--tall { width: 60%; }
+    .gc__cover-img--tall, .gc__cover-img--very-tall, .gc__cover-img--stick { width: 60%; }
     .gc__cover-img--wide,
     .gc__cover-img--sqr { width: 90%;}
   }
@@ -386,13 +400,18 @@
 .gc__feature {
   overflow: hidden;
 
-  .gc__cover-img { opacity: .88; }
+  .gc__cover-img { opacity: .80; }
   &:hover .gc__cover-img { opacity: .36; filter: grayscale(100%); transform: translate(-50%, -50%) scale(1.1); }
-  @include respond-to('medium') { .gc__cover-img {opacity: .64; } }
+  @include respond-to('medium') {
+    .gc__cover-img {opacity: .64; }
+    &.gc--aspect-1to1 {  }
+    &.gc--aspect-2to1 .gc__cover-img--wide { width: auto; height: 110%; }
+  }
   @include respond-to('small') {
     &.gc--aspect-1to1, &.gc--aspect-2to1 { width: 100%; }
     &.gc--aspect-1to1:before, &.gc--aspect-2to1:before { display: none; }
-    &.gc--aspect-1to1 .gc__cover-img--wide { width: 110%; height: auto; }
+    &.gc--aspect-1to1 .gc__cover-img--wide,
+    &.gc--aspect-2to1 .gc__cover-img--wide { width: 110%; height: auto; }
   }
 
   &:after {
@@ -425,6 +444,8 @@
     text-decoration: none;
     z-index: 1;
     padding: 1.5rem;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.36) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#5c000000',GradientType=0 );
 
     @include on-event {
       color: inherit;

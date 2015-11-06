@@ -9,9 +9,13 @@ jQuery(window).load(function($) {
 
       if (ratio >= 0.9 && ratio <= 1.1) {
         $(this).addClass('gc__cover-img--sqr');
-      } else if (width > height) {
+      } else if (ratio < 0.9) {
         $(this).addClass('gc__cover-img--wide');
-      } else {
+      } else if (ratio > 3.3333) {
+        $(this).addClass('gc__cover-img--stick');
+      } else if (ratio > 2.36) {
+        $(this).addClass('gc__cover-img--very-tall');
+      } else if (ratio > 1.1) {
         $(this).addClass('gc__cover-img--tall');
       }
     });
@@ -21,12 +25,17 @@ jQuery(window).load(function($) {
       var height = $(this).height();
       var width = $(this).width();
       var ratio = height / width;
+      console.log(ratio);
 
       if (ratio >= 0.9 && ratio <= 1.1) {
         $(this).addClass('gc__product-img--sqr');
-      } else if (width > height) {
+      } else if (ratio < 0.9) {
         $(this).addClass('gc__product-img--wide');
-      } else {
+      } else if (ratio > 3.3333) {
+        $(this).addClass('gc__product-img--stick');
+      } else if (ratio > 2.36) {
+        $(this).addClass('gc__product-img--very-tall');
+      } else if (ratio > 1.1) {
         $(this).addClass('gc__product-img--tall');
       }
     });

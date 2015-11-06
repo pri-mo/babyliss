@@ -155,6 +155,7 @@
     @include respond-to('medium') { @include gridWidth(1/2); }}
   &.gc--snippet { @include gridWidth(1/5); }
 
+  &.gc--aspect-1to2 { @include aspect(2); }
   &.gc--aspect-1to1 { @include aspect(1); }
   &.gc--aspect-2to1 { @include aspect(1/2);
     @include when-inside('.gc') { &:before { padding-bottom: 50%; }}
